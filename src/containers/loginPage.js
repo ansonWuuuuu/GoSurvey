@@ -73,6 +73,7 @@ const Login = () => {
     const [comfirmPassword, setComfirmPassword] = React.useState('');
     // 輸入userID判斷是否有註冊過
     const [userId, setUserId] = React.useState("");
+    const [newUserId, setNewUserId] = React.useState('');
     // 註冊帳號時的名稱
     const [username, setUsername] = React.useState("");
     // 是否註冊過
@@ -91,7 +92,6 @@ const Login = () => {
         setLoginPasswordErr('')
         setSignUpExistedErr('')
         setSignUpPasswordErr('')
-
         setUserId('')
     }
 
@@ -115,7 +115,8 @@ const Login = () => {
                     password: newPassword,
                 }
             })
-            setSignUp(false);
+            setSignUp(false)
+            setNewUserId(userId)
             setNewPassword('');
             setComfirmPassword('');
             clearAllErrorMsg();
@@ -127,6 +128,7 @@ const Login = () => {
     }
 
     const verifyUser = async () => {
+        console.log(userId)
         if (userId === '') {
             setLoginExistedErr('請輸入您的ID')
             return;
@@ -136,7 +138,8 @@ const Login = () => {
                 userId: userId
             }
         });
-        if (accepted.data.verifyId === false) {
+        console.log(accepted.data.verifyId)
+        if (accepted.data.verifyId === false && newUserId !== userId) {
             setLoginExistedErr('您尚未註冊')
             console.log(loginExistedErr)
         }
