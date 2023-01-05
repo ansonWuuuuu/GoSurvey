@@ -18,7 +18,7 @@ const httpLink = new HttpLink({
   uri: 'https://gosurveyserver-production.up.railway.app/graphql'
 });
 const wsLink = new GraphQLWsLink(createClient({
-  url: 'ws://gosurveyserver-production.up.railway.app/graphql',
+  url: 'wss://gosurveyserver-production.up.railway.app/graphql',
   options: {
     lazy: true,
   },
