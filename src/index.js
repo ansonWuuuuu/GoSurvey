@@ -15,10 +15,10 @@ import reportWebVitals from './reportWebVitals';
 import { SurveyProvider } from './containers/hooks/useSurvey';
 
 const httpLink = new HttpLink({
-  uri: 'https://gosurveyserver-production.up.railway.app/'
+  uri: 'https://gosurveyserver-production.up.railway.app/graphql'
 });
 const wsLink = new GraphQLWsLink(createClient({
-  url: 'ws://gosurveyserver-production.up.railway.app/',
+  url: 'ws://gosurveyserver-production.up.railway.app/graphql',
   options: {
     lazy: true,
   },
@@ -36,7 +36,7 @@ const splitLink = split(
   httpLink,
 );
 const client = new ApolloClient({
-  link: "https://gosurveyserver-production.up.railway.app/graphql",
+  link: splitLink,
   cache: new InMemoryCache(),
 });
 
