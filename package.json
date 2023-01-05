@@ -29,9 +29,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "install:prod": "yarn install --freeze-lockfile",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "install:prod": "yarn install --freeze-lockfile",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
