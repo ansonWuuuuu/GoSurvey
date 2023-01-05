@@ -36,7 +36,7 @@ const splitLink = split(
   httpLink,
 );
 const client = new ApolloClient({
-  link: splitLink,
+  link: "https://gosurveyserver-production.up.railway.app/",
   cache: new InMemoryCache(),
 });
 
