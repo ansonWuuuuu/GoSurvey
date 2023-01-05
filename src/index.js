@@ -15,10 +15,10 @@ import reportWebVitals from './reportWebVitals';
 import { SurveyProvider } from './containers/hooks/useSurvey';
 
 const httpLink = new HttpLink({
-  uri: 'http://gosurveyserver-production.up.railway.app'
+  uri: 'http://gosurveyserver-production.up.railway.app/graphql'
 });
 const wsLink = new GraphQLWsLink(createClient({
-  url: 'ws://gosurveyserver-production.up.railway.app',
+  url: 'ws://gosurveyserver-production.up.railway.app/graphql',
   options: {
     lazy: true,
   },
