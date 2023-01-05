@@ -1,0 +1,6 @@
+/ /
+/home id=:id /home/:id 301
+/search id=:id /search/:id 301
+/porfile id=:id /porfile/:id 301
+/survey id=:id surveyId=:surveyId /survey/:id/:surveyId 301
+/createSurvey id=:id /createSurvey/:id 301
